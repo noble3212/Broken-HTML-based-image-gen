@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Image Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* lightweight spinner + log styles */
+    .spinner {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 3px solid rgba(0,0,0,0.15);
+      border-left-color: #222;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #log {
+      margin-top: 12px;
+      padding: 8px;
+      background: #111;
+      color: #ddd;
+      font-family: monospace;
+      font-size: 12px;
+      max-height: 220px;
+      overflow: auto;
+      border-radius: 6px;
+    }
+    #output img { max-width: 100%; display:block; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <h1>AI Image Generator (Local)</h1>
+  <input type="text" id="prompt" placeholder="Describe your image...">
+  <button id="generate">Generate</button>
+  <button id="check-models" title="Check model URLs">Check models</button>
+  <!-- spinner shown while generating -->
+  <span id="spinner" class="spinner" style="display:none" title="Generating..."></span>
+
+  <div id="output"></div>
+
+  <!-- live logs -->
+  <div id="log" aria-live="polite"></div>
+
+  <!-- Load ONNX Runtime library first -->
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+
+  <!-- Then load your custom script -->
+  <script src="script.js"></script>
+</body>
+</html>

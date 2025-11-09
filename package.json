@@ -1,0 +1,17 @@
+{
+  "name": "local-browser-image-gen",
+  "version": "1.0.0",
+  "scripts": {
+    "serve": "http-server . -p 8000 -c-1",
+    "start-server": "node server.js"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "onnxruntime-node": "^1.15.0",
+    "canvas": "^2.11.2"
+  }
+}
