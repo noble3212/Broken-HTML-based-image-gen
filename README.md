@@ -11,7 +11,7 @@ Issue is I can only load ONNX based models this has ONNX and PB
 Add folder modeles
 add from Stable diffsuion (even though youll need another model
 
-Safety checkerm
+Safety checker
 
 unet
 
